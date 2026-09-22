@@ -1,0 +1,26 @@
+# Heavy SDKs and non-web mobile projects
+android_sdk/
+flutter_sdk/
+flutter_app/
+
+# Dependencies and virtual environments
+**/node_modules/
+**/venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Environment and secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Git and logs
+.git/
+.gitignore
+*.log
+
+# Build outputs
+frontend/dist/
+backend/scans.db

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0d1b3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#050d1f;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00c6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7b2ff7;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="200" rx="40" fill="url(#bgGrad)"/>
+
+  <!-- Magnifying glass circle -->
+  <circle cx="90" cy="85" r="48" fill="none" stroke="url(#glassGrad)" stroke-width="6" filter="url(#glow)"/>
+
+  <!-- Neural network nodes -->
+  <circle cx="90" cy="62" r="5" fill="#00c6ff" filter="url(#glow)"/>
+  <circle cx="68" cy="78" r="4" fill="#7b2ff7" filter="url(#glow)"/>
+  <circle cx="112" cy="78" r="4" fill="#7b2ff7" filter="url(#glow)"/>
+  <circle cx="90" cy="85" r="6" fill="#ffffff" filter="url(#glow)"/>
+  <circle cx="68" cy="98" r="4" fill="#00c6ff" filter="url(#glow)"/>
+  <circle cx="112" cy="98" r="4" fill="#00c6ff" filter="url(#glow)"/>
+  <circle cx="90" cy="108" r="5" fill="#7b2ff7" filter="url(#glow)"/>
+
+  <!-- Neural network edges -->
+  <line x1="90" y1="62" x2="68" y2="78" stroke="url(#glassGrad)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="90" y1="62" x2="112" y2="78" stroke="url(#glassGrad)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="68" y1="78" x2="90" y2="85" stroke="url(#glassGrad)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="112" y1="78" x2="90" y2="85" stroke="url(#glassGrad)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="68" y1="78" x2="68" y2="98" stroke="url(#glassGrad)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="112" y1="78" x2="112" y2="98" stroke="url(#glassGrad)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="68" y1="98" x2="90" y2="108" stroke="url(#glassGrad)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="112" y1="98" x2="90" y2="108" stroke="url(#glassGrad)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="90" y1="85" x2="68" y2="98" stroke="url(#glassGrad)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="90" y1="85" x2="112" y2="98" stroke="url(#glassGrad)" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Magnifying glass handle -->
+  <line x1="128" y1="123" x2="152" y2="150" stroke="url(#glassGrad)" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+</svg>
