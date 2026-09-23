@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  // Public AI Vision API Tunnel (works on any Wi-Fi, 4G, 5G without firewall issues)
-  static String baseUrl = 'https://usual-chargers-tonight-requesting.trycloudflare.com';
+  // Live Railway Production API
+  static String baseUrl = 'https://what-is-this-production.up.railway.app';
 
   static Future<Map<String, dynamic>> analyzeImageFile(File imageFile) async {
     final uri = Uri.parse('$baseUrl/api/analyze');
