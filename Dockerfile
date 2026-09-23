@@ -28,8 +28,8 @@ COPY backend/uploads ./uploads
 # Copy built frontend assets
 COPY --from=frontend-builder /app/frontend/dist ./dist
 
-# Copy Android APK if present for downloads
-COPY what-is-this-app.apk ./uploads/what-is-this-app.apk
+# Copy Android APK if present for downloads (wildcard prevents failure if not committed)
+COPY what-is-this-app.apk* ./uploads/
 
 # Railway injects $PORT dynamically
 ENV PORT=8000
