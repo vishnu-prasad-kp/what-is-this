@@ -57,16 +57,22 @@ from fastapi.responses import FileResponse
 
 @app.get("/download-apk")
 async def download_apk():
-    apk_path = Path("uploads/what-is-this-app.apk")
-    if not apk_path.exists():
-        apk_path = Path("../what-is-this-app.apk")
-    if not apk_path.exists():
-        raise HTTPException(status_code=404, detail="APK not found")
-    return FileResponse(
-        str(apk_path),
-        media_type="application/vnd.android.package-archive",
-        filename="what-is-this-app.apk"
-    )
+    candidates = [
+        Path("uploads/what-is-this-app.apk"),
+        Path("what-is-this-app.apk"),
+        BASE_DIR.parent / "what-is-this-app.apk",
+        BASE_DIR.parent / "uploads" / "what-is-this-app.apk",
+        Path("/app/uploads/what-is-this-app.apk"),
+        Path("/app/what-is-this-app.apk"),
+    ]
+    for c in candidates:
+        if c.exists() and c.is_file():
+            return FileResponse(
+                str(c),
+                media_type="application/vnd.android.package-archive",
+                filename="what-is-this-app.apk"
+            )
+    raise HTTPException(status_code=404, detail="APK not found")
 
 # Locate frontend dist directory if built
 dist_path = None

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Eye, ShieldCheck, Zap } from 'lucide-react';
+import { Eye, Smartphone } from 'lucide-react';
 
 export default function Navbar({ status, onHomeClick }) {
   const isLive = status?.has_groq_key;
@@ -15,6 +15,17 @@ export default function Navbar({ status, onHomeClick }) {
         </div>
 
         <div className="nav-badges">
+          <a
+            href="/download-apk"
+            className="apk-download-btn"
+            download="what-is-this-app.apk"
+            id="download-apk-btn"
+            title="Download Android APK"
+          >
+            <Smartphone size={15} />
+            <span>Download APK</span>
+          </a>
+
           {status ? (
             <div 
               className={`status-badge ${isLive ? 'live' : 'demo'}`} 
